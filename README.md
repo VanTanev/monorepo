@@ -2,7 +2,7 @@
 
 ## Requirements
 
- - You must have nvm (Node Version Manager) installed.
+- You must have nvm (Node Version Manager) installed.
 
 ## Setup
 

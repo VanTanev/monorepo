@@ -1,6 +1,4 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "esModuleInterop": true
-  }
+  "extends": "@monorepo/config/tsconfig.base.json",
+  "exclude": ["node_modules", "dist"]
 }

@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "typescript": "5.6.2"
+    "@eslint8/js": "npm:@eslint/js@^8",
+    "@eslint9/js": "npm:@eslint/js@^9.12.0",
+    "@types/eslint8__js": "npm:@types/eslint__js@^8",
+    "@types/eslint9__js": "npm:@types/eslint__js@^8.42.3",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "typescript": "5.6.2",
+    "typescript-eslint": "^8.7.0"
   }
 }

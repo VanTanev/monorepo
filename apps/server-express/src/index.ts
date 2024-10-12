@@ -1,6 +1,6 @@
 import express from "express";
 
-function createServer(): express.Express {
+export function createServer(): express.Express {
   const app = express();
   app.get("/", (_, res) => {
     return res.json({ status: "running" });

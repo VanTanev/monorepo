@@ -10,7 +10,7 @@ const compat = new FlatCompat({
 export default tseslint.config(
   {
     name: "frontend-nextjs/ignores",
-    ignores: [".next/**", "next.config.mjs", "postcss.config.mjs"],
+    ignores: [".next/**"],
   },
   {
     name: "frontend-nextjs/rules",

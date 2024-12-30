@@ -1,0 +1,4 @@
+post-checkout:
+  commands:
+    pnpm-install:
+      run: "pnpm install --frozen-lockfile"

@@ -1,4 +1,22 @@
+output:
+  - status
+
 post-checkout:
   scripts:
     "pnpm-install-on-branch-switch.sh":
+      runner: "bash"
+
+post-rewrite:
+  scripts:
+    # Run `pnpm install` on:
+    # - git rebase <origin/master>
+    "pnpm-install-on-rebase.sh":
+      runner: "bash"
+
+post-merge:
+  scripts:
+    # Run `pnpm install` on:
+    # - git merge <branch>
+    # - git pull <origin master>
+    "pnpm-install-on-merge.sh":
       runner: "bash"

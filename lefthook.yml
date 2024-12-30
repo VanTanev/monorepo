@@ -1,4 +1,4 @@
 post-checkout:
-  commands:
-    pnpm-install:
-      run: "pnpm install --frozen-lockfile"
+  scripts:
+    "pnpm-install-on-branch-switch.sh":
+      runner: "bash"

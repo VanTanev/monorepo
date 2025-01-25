@@ -1,3 +1,5 @@
+# /lefthook.yaml
+
 output:
   - status
 
@@ -20,3 +22,8 @@ post-merge:
     # - git pull <origin master>
     "pnpm-install-on-merge.sh":
       runner: "bash"
+
+pre-commit:
+  commands:
+    "auto-format files on commit":
+      run: "pretty-quick --staged"

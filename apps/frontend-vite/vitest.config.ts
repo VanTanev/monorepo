@@ -1,6 +1,8 @@
 import { defineConfig, mergeConfig } from "vitest/config";
-import viteConfig from "./vite.config.ts";
+
 import base from "@monorepo/config/vitest.base.mjs";
+
+import viteConfig from "./vite.config.ts";
 
 export default mergeConfig(
   viteConfig,
@@ -10,6 +12,6 @@ export default mergeConfig(
       test: {
         // project-specific test options go here
       },
-    })
-  )
+    }),
+  ),
 );

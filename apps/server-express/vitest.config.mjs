@@ -1,4 +1,5 @@
 import { defineConfig, mergeConfig } from "vitest/config";
+
 import base from "@monorepo/config/vitest.base.mjs";
 
 export default mergeConfig(
@@ -7,5 +8,5 @@ export default mergeConfig(
     test: {
       // project-specific test options go here
     },
-  })
+  }),
 );

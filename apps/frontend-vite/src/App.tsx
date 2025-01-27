@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     console.log(count);
-    void new AbortController().signal
+    void new AbortController().signal;
   }, [count]);
 
   return (

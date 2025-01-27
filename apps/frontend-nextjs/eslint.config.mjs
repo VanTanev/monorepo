@@ -1,7 +1,8 @@
-import base from "@monorepo/config/eslint9.base.mjs";
+import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import { FlatCompat } from "@eslint/eslintrc";
+
+import base from "@monorepo/config/eslint9.base.mjs";
 
 const compat = new FlatCompat({
   baseDirectory: process.cwd(),
@@ -18,5 +19,5 @@ export default tseslint.config(
     languageOptions: {
       globals: globals.browser,
     },
-  }
+  },
 );

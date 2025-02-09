@@ -26,4 +26,4 @@ post-merge:
 pre-commit:
   commands:
     "auto-format files on commit":
-      run: "./node_modules/.bin/pretty-quick --staged"
+      run: "pnpm pretty-quick --staged"

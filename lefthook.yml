@@ -1,8 +1,5 @@
 # /lefthook.yaml
 
-output:
-  - status
-
 post-checkout:
   scripts:
     "pnpm-install-on-branch-switch.sh":
@@ -24,6 +21,9 @@ post-merge:
       runner: "bash"
 
 pre-commit:
+  parallel: true
   commands:
     "auto-format files on commit":
       run: "./node_modules/.bin/pretty-quick --staged"
+    "check for unused files, exports and dependencies":
+      run: "./node_modules/.bin/knip"

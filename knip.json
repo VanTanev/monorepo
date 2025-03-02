@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    "apps/frontend-nextjs": {
+      "ignoreDependencies": ["@swc/jest", "eslint-config-next"]
+    },
+    "packages/config": {
+      "entry": ["eslint8.base.mjs"],
+      "ignoreDependencies": ["@swc/jest", "@swc/core"]
+    }
+  }
+}

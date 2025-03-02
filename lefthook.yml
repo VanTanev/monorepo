@@ -27,3 +27,5 @@ pre-commit:
       run: "./node_modules/.bin/pretty-quick --staged"
     "check for unused files, exports and dependencies":
       run: "./node_modules/.bin/knip"
+    "lint monorepo with sherif":
+      run: "./node_modules/.bin/sherif"

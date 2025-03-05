@@ -20,12 +20,38 @@ post-merge:
     "pnpm-install-on-merge.sh":
       runner: "bash"
 
+__shared_commands__:
+  tsc: &tsc
+    glob: "*.{js,ts,cjs,cts,mjs,mts,jsx,tsx}"
+    run: "./node_modules/.bin/tsc --noEmit"
+  lint: &lint
+    glob: "*.{js,ts,cjs,cts,mjs,mts,jsx,tsx}"
+    run: "./node_modules/.bin/eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}"
+  jest: &jest
+    glob: "*.{js,ts,cjs,cts,mjs,mts,jsx,tsx}"
+    run: "./node_modules/.bin/jest --runInBand --findRelatedTests --passWithNoTests {staged_files}"
+  vitest: &vitest
+    glob: "*.{js,ts,cjs,cts,mjs,mts,jsx,tsx}"
+    run: "./node_modules/.bin/vitest related --run --no-file-parallelism {staged_files}"
+
 pre-commit:
   parallel: true
   commands:
-    "auto-format files on commit":
+    "root: auto-format files on commit":
       run: "./node_modules/.bin/pretty-quick --staged"
-    "check for unused files, exports and dependencies":
+    "root: check for unused files, exports and dependencies":
       run: "./node_modules/.bin/knip"
-    "lint monorepo with sherif":
+    "root: lint monorepo with sherif":
       run: "./node_modules/.bin/sherif"
+
+    "apps/frontend-nextjs:tsc": { root: "apps/frontend-nextjs", <<: *tsc }
+    "apps/frontend-vite:tsc": { root: "apps/frontend-vite", <<: *tsc }
+    "apps/server-express:tsc": { root: "apps/server-express", <<: *tsc }
+
+    "apps/frontend-nextjs:lint": { root: "apps/frontend-nextjs", <<: *lint }
+    "apps/frontend-vite:lint": { root: "apps/frontend-vite", <<: *lint }
+    "apps/server-express:lint": { root: "apps/server-express", <<: *lint }
+
+    "apps/frontend-nextjs:jest": { root: "apps/frontend-nextjs", <<: *jest }
+    "apps/frontend-vite:vitest": { root: "apps/frontend-vite", <<: *vitest }
+    "apps/server-express:vitest": { root: "apps/server-express", <<: *vitest }

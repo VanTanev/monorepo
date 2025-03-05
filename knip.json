@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignore": ["./lefthook.yml"],
   "workspaces": {
     "apps/frontend-nextjs": {
       "ignoreDependencies": ["@swc/jest", "eslint-config-next"]

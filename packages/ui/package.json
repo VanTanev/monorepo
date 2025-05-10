@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo/ui",
+  "private": true,
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@monorepo/config": "workspace:^",
+    "@types/react": "^18.3.10",
+    "react": "^18.3.1",
+    "typescript": "^5.7.3"
+  },
+  "exports": {
+    "./button": "./src/button/index.tsx"
+  }
+}

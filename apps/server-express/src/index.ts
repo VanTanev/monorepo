@@ -1,7 +1,5 @@
 import express from "express";
 
-import { logger } from "@monorepo/logger";
-
 export function createServer(): express.Express {
   const app = express();
   app.get("/", (_, res) => {
@@ -16,7 +14,7 @@ function main() {
   const server = createServer();
 
   server.listen(port, () => {
-    logger(`server-express is running on http://localhost:${port}`);
+    console.log(`server-express is running on http://localhost:${port}`);
   });
 }
 

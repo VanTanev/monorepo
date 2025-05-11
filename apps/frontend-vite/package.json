@@ -12,7 +12,6 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@monorepo/ui": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

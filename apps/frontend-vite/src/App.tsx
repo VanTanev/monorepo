@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { Button } from "@monorepo/ui/button";
+
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -15,6 +17,8 @@ function App() {
   return (
     <>
       <div>
+        <Button />
+        <hr />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

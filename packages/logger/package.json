@@ -1,6 +1,9 @@
 {
   "name": "@monorepo/logger",
   "private": true,
+  "scripts": {
+    "test:types": "tsc --noEmit"
+  },
   "devDependencies": {
     "@monorepo/config": "workspace:^",
     "typescript": "^5.7.3"

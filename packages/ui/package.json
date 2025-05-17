@@ -1,6 +1,9 @@
 {
   "name": "@monorepo/ui",
   "private": true,
+  "scripts": {
+    "test:types": "tsc --noEmit"
+  },
   "peerDependencies": {
     "react": "*"
   },

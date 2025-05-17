@@ -1,12 +1,13 @@
 {
   "name": "@monorepo/logger",
   "private": true,
+  "type": "module",
   "scripts": {
     "test:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@monorepo/config": "workspace:^",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   },
   "exports": {
     ".": "./src/index.ts"

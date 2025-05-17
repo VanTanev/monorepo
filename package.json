@@ -29,6 +29,6 @@
     "prettier": "3.3.3",
     "pretty-quick": "^4.0.0",
     "sherif": "^1.4.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   }
 }

@@ -23,6 +23,8 @@
     "noUncheckedIndexedAccess": true,
     /* Forces you to declare if a subclass method overrides a parent class method */
     "noImplicitOverride": true,
+    /* Do not allow code that requires emitting JS from TS-only notations (eg, enum) */
+    "erasableSyntaxOnly": true,
 
     /* Only typecheck, do not compile to JS */
     "noEmit": true,

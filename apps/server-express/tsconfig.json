@@ -1,4 +1,4 @@
 {
-  "extends": "@monorepo/config/tsconfig.base.json",
+  "extends": "@monorepo/config/tsconfig.node.json",
   "exclude": ["node_modules", "dist"]
 }

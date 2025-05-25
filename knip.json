@@ -8,6 +8,9 @@
     "packages/config": {
       "entry": ["eslint8.base.mjs"],
       "ignoreDependencies": ["@swc/jest", "@swc/core"]
+    },
+    "packages/ui": {
+      "entry": ["src/*/index.tsx"]
     }
   }
 }

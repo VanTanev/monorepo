@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 
-export function Button() {
-  const [count, setCount] = useState(0);
+export type ButtonProps = {
+  initialCount?: number;
+};
+export function Button(props: ButtonProps) {
+  const [count, setCount] = useState(props.initialCount ?? 0);
 
   return (
     <div>

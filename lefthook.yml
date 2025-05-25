@@ -43,6 +43,8 @@ pre-commit:
       run: "./node_modules/.bin/knip"
     "root: lint monorepo with sherif":
       run: "./node_modules/.bin/sherif"
+    "root: validate monorepo with preconstruct":
+      run: "./node_modules/.bin/preconstruct validate"
 
     "apps/frontend-nextjs:tsc": { root: "apps/frontend-nextjs", <<: *tsc }
     "apps/frontend-vite:tsc": { root: "apps/frontend-vite", <<: *tsc }

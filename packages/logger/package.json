@@ -2,14 +2,27 @@
   "name": "@monorepo/logger",
   "private": true,
   "type": "module",
+  "preconstruct": {
+    "exports": true,
+    "___experimentalFlags_WILL_CHANGE_IN_PATCH": {
+      "typeModule": true,
+      "distInRoot": true,
+      "importsConditions": true
+    }
+  },
   "scripts": {
+    "dev": "preconstruct dev",
+    "build": "preconstruct build",
     "test:types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
     "@monorepo/config": "workspace:^",
+    "@preconstruct/cli": "2.8.12",
     "typescript": "^5.8.3"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./dist/monorepo-logger.js",
+    "./package.json": "./package.json"
   }
 }

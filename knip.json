@@ -9,6 +9,9 @@
       "entry": ["eslint8.base.mjs"],
       "ignoreDependencies": ["@swc/jest", "@swc/core"]
     },
+    "packages/logger": {
+      "ignoreDependencies": ["pino"]
+    },
     "packages/ui": {
       "entry": ["src/*/index.tsx"]
     }

@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@preconstruct/cli':
+        specifier: 2.8.12
+        version: 2.8.12
       '@trivago/prettier-plugin-sort-imports':
         specifier: 4.3.0
         version: 4.3.0(prettier@3.3.3)

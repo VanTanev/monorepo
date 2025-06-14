@@ -9,6 +9,18 @@
       "dependsOn": ["build"],
       "persistent": true,
       "cache": false
+    },
+    "test:types": {
+      "dependsOn": ["transit"]
+    },
+    "lint": {
+      "dependsOn": ["transit"]
+    },
+    "test": {
+      "dependsOn": ["transit"]
+    },
+    "transit": {
+      "dependsOn": ["^transit"]
     }
   }
 }

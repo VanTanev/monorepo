@@ -1,6 +1,7 @@
 {
   "extends": "@monorepo/config/tsconfig.base.json",
   "compilerOptions": {
+    "declarationMap": true,
     "jsx": "preserve"
   },
   "exclude": ["node_modules", "dist"]

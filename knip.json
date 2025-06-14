@@ -10,6 +10,7 @@
       "ignoreDependencies": ["@swc/jest", "@swc/core"]
     },
     "packages/logger": {
+      "ignore": ["src/conditions/true.ts"],
       "ignoreDependencies": ["pino"]
     },
     "packages/ui": {

@@ -2,6 +2,7 @@
   "name": "@monorepo/logger",
   "private": true,
   "type": "module",
+  "sideEffects": false,
   "preconstruct": {
     "exports": true,
     "___experimentalFlags_WILL_CHANGE_IN_PATCH": {
@@ -30,8 +31,35 @@
       "optional": true
     }
   },
+  "imports": {
+    "#is-development": {
+      "development": "./src/conditions/true.ts",
+      "default": "./src/conditions/false.ts"
+    },
+    "#is-browser": {
+      "edge-light": "./src/conditions/false.ts",
+      "workerd": "./src/conditions/false.ts",
+      "worker": "./src/conditions/false.ts",
+      "browser": "./src/conditions/true.ts",
+      "default": "./src/conditions/is-browser.ts"
+    }
+  },
   "exports": {
-    ".": "./dist/monorepo-logger.js",
+    ".": {
+      "types": "./dist/monorepo-logger.js",
+      "development": {
+        "edge-light": "./dist/monorepo-logger.development.edge-light.js",
+        "worker": "./dist/monorepo-logger.development.edge-light.js",
+        "workerd": "./dist/monorepo-logger.development.edge-light.js",
+        "browser": "./dist/monorepo-logger.browser.development.js",
+        "default": "./dist/monorepo-logger.development.js"
+      },
+      "edge-light": "./dist/monorepo-logger.edge-light.js",
+      "worker": "./dist/monorepo-logger.edge-light.js",
+      "workerd": "./dist/monorepo-logger.edge-light.js",
+      "browser": "./dist/monorepo-logger.browser.js",
+      "default": "./dist/monorepo-logger.js"
+    },
     "./package.json": "./package.json"
   }
 }

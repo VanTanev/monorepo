@@ -7,6 +7,7 @@
       "*/index.tsx"
     ],
     "exports": true,
+    "declarationMap": true,
     "___experimentalFlags_WILL_CHANGE_IN_PATCH": {
       "typeModule": true,
       "distInRoot": true,

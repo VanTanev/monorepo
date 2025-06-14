@@ -1,12 +1,6 @@
-import pino from "pino";
+import isBrowser from "#is-browser";
 
-export function browserLogger(...msg: string[]) {
-  console.log("LOGGING FROM @monorepo/logger");
-  console.log(...msg);
-}
+import { browserLogger } from "./browserLogger";
+import { nodeLogger } from "./nodeLogger";
 
-const pinoLogger = pino();
-export function nodeLogger(...msg: string[]) {
-  console.log("LOGGING FROM @monorepo/logger");
-  pinoLogger.info({ msg });
-}
+export const logger = isBrowser ? browserLogger : nodeLogger;

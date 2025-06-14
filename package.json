@@ -6,8 +6,8 @@
     "node": ">= 22.0.0"
   },
   "scripts": {
-    "build": "pnpm run -r build",
-    "start": "pnpm run -r start",
+    "build": "turbo build",
+    "start": "turbo start",
     "dev": "pnpm run -r dev",
     "test:types": "pnpm run -r test:types",
     "format": "prettier --write .",

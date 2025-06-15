@@ -3,6 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "build": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/__tests__/**"],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     }

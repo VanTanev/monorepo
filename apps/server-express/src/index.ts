@@ -16,7 +16,9 @@ function main() {
   const server = createServer();
 
   server.listen(port, () => {
-    logger(`server-express is running on http://localhost:${port}`);
+    logger(
+      `${process.env.MY_APP_ID}: server-express is running on http://localhost:${port}`,
+    );
   });
 }
 

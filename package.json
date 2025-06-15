@@ -8,6 +8,7 @@
   "scripts": {
     "build": "turbo build",
     "start": "turbo start",
+    "lint": "turbo lint",
     "ci": "turbo run test:types lint test --concurrency=50%",
     "dev": "pnpm run -r dev",
     "test:types": "turbo test:types",

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "env": ["MY_APP_ID"],
+      "passThroughEnv": ["PORT"],
+      "outputs": ["dist"]
+    }
+  }
+}

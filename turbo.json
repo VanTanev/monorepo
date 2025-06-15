@@ -1,5 +1,7 @@
 {
   "$schema": "https://turborepo.com/schema.json",
+  "globalEnv": ["OS", "RUNNER_OS"],
+  "globalPassThroughEnv": ["PLAYWRIGHT_*"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

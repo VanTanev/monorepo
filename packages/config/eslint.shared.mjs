@@ -1,8 +1,10 @@
 import eslintConfigPrettier from "eslint-config-prettier";
+import turboConfig from "eslint-config-turbo/flat";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
+  ...turboConfig,
   {
     name: "@monorepo/ignore",
     ignores: [

@@ -1,4 +1,7 @@
 {
   "extends": "@monorepo/config/tsconfig.node.json",
+  "compilerOptions": {
+    "lib": ["es2022", "dom"]
+  },
   "exclude": ["node_modules", "dist"]
 }

@@ -1,5 +1,5 @@
 {
-  "extends": "@monorepo/config/tsconfig.base.json",
+  "extends": "@monorepo/config/tsconfig.node.json",
   "compilerOptions": {
     "lib": ["es2022", "dom"]
   },

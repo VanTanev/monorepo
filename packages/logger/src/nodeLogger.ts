@@ -1,5 +1,5 @@
 import isDev from "#is-development";
-import pino from "pino";
+import { pino } from "pino";
 
 const pinoLogger = pino();
 export function nodeLogger(...msg: string[]) {

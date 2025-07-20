@@ -5,8 +5,11 @@
   "globalDependencies": [".env*.local"],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "clean"],
       "outputs": ["dist"]
+    },
+    "clean": {
+      "cache": false
     },
     "start": {
       "dependsOn": ["build"],

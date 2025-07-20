@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "preconstruct dev",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive:true, force:true })\"",
     "build": "preconstruct build",
     "test:types": "tsc --noEmit"
   },

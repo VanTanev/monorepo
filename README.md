@@ -1,4 +1,4 @@
-# Our company's monorepo
+# Example Monorepo
 
 ## Requirements
 

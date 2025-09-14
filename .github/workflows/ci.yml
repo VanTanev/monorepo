@@ -1,0 +1,61 @@
+name: CI job
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  merge_group:
+    types: [checks_requested]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  knip:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: ".nvmrc"
+      - run: pnpm install
+
+      - run: pnpm knip
+
+  sherif:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: npx --yes --package "sherif@$(node -p "require('./package.json')['devDependencies']['sherif']")" sherif
+
+  prettier:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: ".nvmrc"
+      - run: pnpm install
+
+      - run: pnpm prettier --check .
+
+  ci:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: ".nvmrc"
+      - run: pnpm install
+
+      - run: pnpm -r test:types
+        if: always()
+      - run: pnpm -r lint
+        if: always()
+      - run: pnpm -r test
+        if: always()
+      - run: pnpm -r build
+        if: always()

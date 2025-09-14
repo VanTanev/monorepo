@@ -8,7 +8,6 @@ When working in a monorepo with multiple apps, we want to extract common code in
 
 - Write internal packages in TypeScript and share them across apps.
 - Prioritize developer experience:
-
   - Editing shared code should feel as seamless as editing application code.
   - Changes to shared code should trigger live reloads during development.
 

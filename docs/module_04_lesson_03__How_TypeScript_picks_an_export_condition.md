@@ -116,6 +116,5 @@ Key points:
 - `moduleResolution` is the **directory walker** -- It decides what branch to take in the export condition, and which `.d.ts` types definition to load.
 - Together they form the **condition stack** that walks `exports` or `imports`.
 - The two patterns to memorise:
-
   1. **`preserve + bundler`** -- for **apps** that use a bundler which consumes `.ts`.
   2. **`nodenext + nodenext`** -- for **libraries** or **servers** that must run directly on Node.js.

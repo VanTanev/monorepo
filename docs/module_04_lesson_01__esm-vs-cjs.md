@@ -13,7 +13,6 @@ Node.js supports two parallel module systems:
 ## How does Node .js decide which system to use?
 
 1. **File extension first**
-
    - `.mjs` → **ESM**
    - `.cjs` → **CJS**
    - TypeScript:\_ `.mts`/`.cts` follow the same rule and are emitted as `.mjs`/`.cjs`.

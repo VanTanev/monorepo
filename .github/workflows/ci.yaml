@@ -25,3 +25,9 @@ jobs:
         if: always()
       - run: pnpm -r build
         if: always()
+
+  sherif:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: npx -y --package "sherif@$(node -p "require('./package.json')['devDependencies']['sherif']")" sherif

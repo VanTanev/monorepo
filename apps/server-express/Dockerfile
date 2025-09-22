@@ -1,7 +1,8 @@
 FROM node:22.19.0-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable pnpm && corepack install -g pnpm@latest-10
+RUN corepack enable pnpm
+RUN corepack install -g pnpm@latest-10
 
 FROM base AS fetcher
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./

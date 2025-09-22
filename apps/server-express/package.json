@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@monorepo/logger": "workspace:^",
-    "eslint": "^9.12.0",
     "express": "^4"
   },
   "devDependencies": {
     "@monorepo/config": "workspace:^",
     "@types/express": "^4",
+    "eslint": "^9.12.0",
     "pino": "^9.7.0",
     "tsup": "^8.3.0",
     "typescript": "^5.8.3",

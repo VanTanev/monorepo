@@ -16,7 +16,7 @@ RUN pnpm install --offline --ignore-scripts --frozen-lockfile
 RUN pnpm --filter=@apps/server-express... run build
 RUN pnpm --filter=@apps/server-express deploy --prod /prod/app --legacy --ignore-scripts
 
-FROM node:22.19.0-slim AS runner
+FROM node:22.19.0-alpine AS runner
 WORKDIR /app
 COPY --from=builder /prod/app .
 

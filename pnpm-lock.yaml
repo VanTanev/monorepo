@@ -154,9 +154,6 @@ importers:
       '@monorepo/logger':
         specifier: workspace:^
         version: link:../../packages/logger
-      eslint:
-        specifier: ^9.12.0
-        version: 9.12.0(jiti@2.4.2)
       express:
         specifier: ^4
         version: 4.21.1
@@ -167,6 +164,9 @@ importers:
       '@types/express':
         specifier: ^4
         version: 4.17.21
+      eslint:
+        specifier: ^9.12.0
+        version: 9.12.0(jiti@2.4.2)
       pino:
         specifier: ^9.7.0
         version: 9.7.0

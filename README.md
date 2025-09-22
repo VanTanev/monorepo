@@ -7,7 +7,7 @@
 ## Setup
 
 ```bash
-nvm install       # Install Node.js with the version specified in .nvmrc
-corepack enable   # Enable corepack for pnpm and yarn
-pnpm install      # Install dependencies using the version specified in package.json#packageManager
+nvm install          # Install Node.js with the version specified in .nvmrc
+corepack enable pnpm # Enable corepack for pnpm
+pnpm install         # Install dependencies using the version of pnpm specified in package.json#packageManager
 ```

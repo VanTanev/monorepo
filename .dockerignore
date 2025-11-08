@@ -23,6 +23,7 @@ turbo
 Thumbs.db
 *.swp
 *.swo
+*.md
 
 # Logs
 npm-debug.log*

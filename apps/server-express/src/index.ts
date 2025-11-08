@@ -4,7 +4,8 @@ import { logger } from "@monorepo/logger";
 
 export function createServer(): express.Express {
   const app = express();
-  app.get("/", (_, res) => {
+  app.get("/", (req, res) => {
+    logger(`served request from ${req.ip}`);
     return res.json({ status: "running" });
   });
 

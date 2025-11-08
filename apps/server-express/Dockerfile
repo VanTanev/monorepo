@@ -1,25 +1,40 @@
-FROM node:22.19.0-slim AS base
+# Setup a multi-stage Docker build for a Node.js application using pnpm.
+
+
+# **Base stage**: Set up Node.js environment with pnpm
+FROM node:22-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable pnpm
 RUN corepack install -g pnpm@latest-10
 
-FROM base AS fetcher
-COPY pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY patches patches
-RUN pnpm fetch --ignore-scripts
 
-FROM fetcher AS builder
+# **Fetch stage**: Install dependencies using pnpm with caching
+FROM base AS fetch
+# Copy only the files necessary to run `pnpm fetch` - this helps leverage Docker layer caching
+COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+# We may need to copy patches if there are any local patches applied to dependencies
+COPY patches patches
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm fetch --frozen-lockfile --ignore-scripts
+
+
+# **Build stage**: Build the application
+FROM fetch AS build
 WORKDIR /app
 COPY . .
-RUN pnpm install --offline --ignore-scripts --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --offline --frozen-lockfile --ignore-scripts
+# "@apps/server-express" is the name of the workspace, defined in ./apps/server-express/package.json
 RUN pnpm --filter=@apps/server-express... run build
 RUN pnpm --filter=@apps/server-express deploy --prod /prod/app --legacy --ignore-scripts
 
-FROM node:22.19.0-alpine AS runner
-WORKDIR /app
-COPY --from=builder /prod/app .
 
+# **App stage**: Final production image
+FROM node:22-alpine AS app
+WORKDIR /prod/app
+COPY --from=build /prod/app /prod/app
+
+
+# Expose the application port and set environment variables
 EXPOSE 3000
 ENV NODE_ENV=production
 ENV PORT=3000

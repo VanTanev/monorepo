@@ -29,6 +29,11 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-turbo-
 
+      - name: "Force disable turbo cache"
+        if: contains(github.event.pull_request.labels.*.name, '🚫 skip turbo cache')
+        run: echo "TURBO_FORCE=true" >> $GITHUB_ENV
+        shell: bash
+
       - run: pnpm turbo run test:types lint test --continue
       - run: pnpm turbo run build --continue
 

@@ -13,7 +13,7 @@
   "dependencies": {
     "@monorepo/config": "workspace:^",
     "@monorepo/ui": "workspace:^",
-    "next": "14.2.14",
+    "next": "14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -24,7 +24,7 @@
     "@types/react": "18.3.28",
     "@types/react-dom": "18.3.7",
     "eslint": "npm:eslint@8.57.1",
-    "eslint-config-next": "14.2.14",
+    "eslint-config-next": "14.2.35",
     "globals": "15.11.0",
     "jest": "29.7.0",
     "postcss": "8.4.47",

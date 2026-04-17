@@ -2,7 +2,7 @@
 
 
 # **Base stage**: Set up Node.js environment with pnpm
-FROM node:22-slim AS base
+FROM node:22-slim@sha256:f3a68cf41a855d227d1b0ab832bed9749469ef38cf4f58182fb8c893bc462383 AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable pnpm
@@ -29,7 +29,7 @@ RUN pnpm --filter=@apps/server-express deploy --prod /prod/app --legacy --ignore
 
 
 # **App stage**: Final production image
-FROM node:22-alpine AS app
+FROM node:22-alpine@sha256:8ea2348b068a9544dae7317b4f3aafcdc032df1647bb7d768a05a5cad1a7683f AS app
 WORKDIR /prod/app
 COPY --from=build /prod/app /prod/app
 

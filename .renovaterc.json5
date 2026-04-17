@@ -1,24 +1,18 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":semanticCommitTypeAll(chore)"
-  ],
-  "npm": {
-    "commitMessageTopic": "{{prettyDepType}} {{depName}}"
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:best-practices", ":semanticCommitTypeAll(chore)"],
+  npm: {
+    commitMessageTopic: "{{prettyDepType}} {{depName}}",
   },
-  "labels": ["dependencies"],
-  "minimumReleaseAge": "14 days",
-  "packageRules": [
+  labels: ["dependencies"],
+  minimumReleaseAge: "14 days",
+  packageRules: [
     {
       // dev and test dependencies
       // safe to merge during the night
-      "minimumReleaseAge": "7 days",
-      "extends": [
-        "packages:eslint",
-        "packages:jsTest",
-      ],
-      "matchPackageNames": [
+      minimumReleaseAge: "7 days",
+      extends: ["packages:eslint", "packages:jsTest"],
+      matchPackageNames: [
         "@biomejs/*",
         "@faker-js/*",
         "@opentelemetry/*",
@@ -36,30 +30,26 @@
         "turbo",
         "typescript",
       ],
-      "automerge": true,
+      automerge: true,
     },
     {
       // prod and higher-risk dependencies
       // only merge during the day
       // only minor and patch updates
-      "minimumReleaseAge": "14 days",
-      "matchPackageNames": [
-        "*"
-      ],
-      "matchCurrentVersion": "!/^0/",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
+      minimumReleaseAge: "14 days",
+      matchPackageNames: ["*"],
+      matchCurrentVersion: "!/^0/",
+      matchUpdateTypes: ["minor", "patch"],
+      automerge: true,
       // 10am-4pm Mon-Fri
-      "schedule": [
-        "* 10-15 * * 1-5"
-      ]
+      schedule: ["* 10-15 * * 1-5"],
     },
   ],
-  "automergeType": "pr",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": ["before 11am on monday"],
+  automergeType: "pr",
+  lockFileMaintenance: {
+    enabled: true,
+    automerge: true,
+    schedule: ["before 11am on monday"],
   },
-  "postUpdateOptions": ["pnpmDedupe"]
+  postUpdateOptions: ["pnpmDedupe"],
 }

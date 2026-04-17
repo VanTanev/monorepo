@@ -40,7 +40,7 @@
     "@preconstruct/cli": "2.8.12",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/node": "20.16.11",
-    "knip": "5.61.0",
+    "knip": "6.4.1",
     "lefthook": "1.10.1",
     "prettier": "3.6.2",
     "pretty-quick": "4.0.0",

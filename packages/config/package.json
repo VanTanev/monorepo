@@ -8,7 +8,6 @@
     "@swc/core": "1.7.35",
     "@swc/jest": "0.2.36",
     "@types/eslint8__js": "npm:@types/eslint__js@8.42.3",
-    "@types/eslint9__js": "npm:@types/eslint__js@8.42.3",
     "@types/jest": "29.5.13",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-turbo": "2.5.4",

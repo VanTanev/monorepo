@@ -7,7 +7,7 @@
     "@eslint9/js": "npm:@eslint/js@9.39.4",
     "@swc/core": "1.15.24",
     "@swc/jest": "0.2.39",
-    "@types/eslint8__js": "npm:@types/eslint__js@8.42.3",
+    "@types/eslint8__js": "npm:@types/eslint__js@9.14.0",
     "@types/jest": "29.5.14",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-turbo": "2.9.3",

@@ -41,7 +41,7 @@
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
     "@types/node": "20.19.39",
     "knip": "6.4.1",
-    "lefthook": "1.13.6",
+    "lefthook": "2.1.6",
     "prettier": "3.8.1",
     "pretty-quick": "4.2.2",
     "sherif": "1.11.1",

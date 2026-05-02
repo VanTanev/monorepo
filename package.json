@@ -18,7 +18,7 @@
     "postinstall": "preconstruct dev",
     "knip": "knip"
   },
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
     "neverBuiltDependencies": [],
     "allowedDeprecatedVersions": {

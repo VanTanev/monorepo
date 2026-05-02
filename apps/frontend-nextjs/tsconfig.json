@@ -1,6 +1,7 @@
 {
   "extends": "@monorepo/config/tsconfig.base.json",
   "compilerOptions": {
+    "types": ["node", "jest"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "preserve",
     "incremental": true,

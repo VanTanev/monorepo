@@ -17,6 +17,7 @@
         "@faker-js/*",
         "@opentelemetry/*",
         "@testcontainers/*",
+	"node",
         "fishery",
         "knip",
         "kysely-codegen",

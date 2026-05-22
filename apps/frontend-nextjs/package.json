@@ -25,7 +25,7 @@
     "@types/react-dom": "18.3.7",
     "eslint": "npm:eslint@8.57.1",
     "eslint-config-next": "14.2.35",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "jest": "30.3.0",
     "postcss": "8.5.14",
     "postcss-load-config": "6.0.1",

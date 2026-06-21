@@ -1,3 +1,13 @@
 packages:
   - "apps/*"
   - "packages/*"
+allowBuilds:
+  "@swc/core": true
+  esbuild: true
+  lefthook: true
+  unrs-resolver: true
+allowedDeprecatedVersions:
+  eslint: "8"
+autoInstallPeers: false
+publicHoistPattern:
+  - "*eslint*"

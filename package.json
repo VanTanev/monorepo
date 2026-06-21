@@ -18,13 +18,7 @@
     "postinstall": "preconstruct dev",
     "knip": "knip"
   },
-  "packageManager": "pnpm@10.33.4",
-  "pnpm": {
-    "neverBuiltDependencies": [],
-    "allowedDeprecatedVersions": {
-      "eslint": "8"
-    }
-  },
+  "packageManager": "pnpm@11.8.0",
   "preconstruct": {
     "packages": [
       "packages/*",

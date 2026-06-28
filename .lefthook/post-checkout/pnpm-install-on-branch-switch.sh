@@ -7,18 +7,32 @@ prev_head="$1"
 new_head="$2"
 # 0 means "file checkout", 1 means "branch switch"
 flag="$3"
+# the commit hash used by git when checking out a worktree
+worktree_prev_head="0000000000000000000000000000000000000000"
+
+# load shared hook functions
+# shellcheck source=.lefthook/lib/file-has-changed.sh
+source ".lefthook/lib/file-has-changed.sh"
+
+# if this is a file checkout, exit
+if [ "$flag" != "1" ]; then
+  exit 0
+fi
+
+# if we're checking out the same commit, exit
+if [ "$prev_head" = "$new_head" ]; then
+  exit 0
+fi
+
 # branch name will be an empty string if we're in a detached head
 branch_name="$(git branch --show-current)"
-# list of all changed files between the previous head and the new head
-changed_files="$(git diff-tree -r --name-only --no-commit-id $prev_head $new_head)"
+# if we're in a detached head, exit
+if [ -z "$branch_name" ]; then
+  exit 0
+fi
 
-# function to check if a particular file was changed
-file_has_changed() {
-  echo "$changed_files" | grep -q "$1"
-}
-
-# if this is a branch switch, and we're not in a detached head, and pnpm-lock.yaml was changed
-if [ "$flag" = "1" ] && [ -n "$branch_name" ] && file_has_changed "pnpm-lock.yaml"; then
-  # then run pnpm install
-  pnpm install --frozen-lockfile
+# if we're checking out a worktree, or pnpm-lock.yaml has changed
+if [ "$prev_head" = "$worktree_prev_head" ] || file_has_changed "$prev_head" "$new_head" "pnpm-lock.yaml"; then
+  # then run pnpm install non-interactively
+  CI=true pnpm install --frozen-lockfile
 fi

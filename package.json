@@ -33,7 +33,7 @@
   "devDependencies": {
     "@preconstruct/cli": "2.8.13",
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
-    "@types/node": "22.19.20",
+    "@types/node": "22.19.21",
     "knip": "6.9.0",
     "lefthook": "2.1.9",
     "prettier": "3.8.3",

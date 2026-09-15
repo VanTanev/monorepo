@@ -18,7 +18,7 @@
     "test:types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "7.28.5",
+    "@babel/preset-typescript": "8.0.1",
     "@monorepo/config": "workspace:^",
     "@preconstruct/cli": "2.8.13",
     "pino": "10.3.1",

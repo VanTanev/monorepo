@@ -29,7 +29,7 @@ RUN pnpm --filter=@apps/server-express deploy --prod /prod/app --legacy --ignore
 
 
 # **App stage**: Final production image
-FROM node:22-alpine@sha256:968df39aedcea65eeb078fb336ed7191baf48f972b4479711397108be0966920 AS app
+FROM node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 AS app
 WORKDIR /prod/app
 COPY --from=build /prod/app /prod/app
 
